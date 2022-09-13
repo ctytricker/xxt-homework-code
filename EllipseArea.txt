@@ -1,0 +1,28 @@
+import java.util.Scanner;
+
+public class EllipseArea {
+    double a;
+    double b;
+
+    public EllipseArea(double a,double b){
+        this.a = a;
+        this.b = b;
+    }
+
+    public double Area(){
+        double S = Math.PI *this.a * this.b;
+        return S;
+    }
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        double a1 = sc.nextDouble();
+        double b1 = sc.nextDouble();
+        if(a1 == 0 || b1 ==0){
+            System.out.println("ERROR");
+        }else{
+            EllipseArea e = new EllipseArea(a1,b1);
+            System.out.printf("%.2f",e.Area());
+        }
+    }
+}

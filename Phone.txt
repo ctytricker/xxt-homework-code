@@ -1,0 +1,60 @@
+import java.util.Scanner;
+
+public class Phone {
+    String brand;
+    String type;
+    double price;
+    String os;
+    int memory;
+
+    public Phone(){ }//空参构造
+
+    public Phone(String brand,String type,String os,double price,int memory){//有参构造
+        this.brand = brand;
+        this.type = type;
+        this.os = os;
+        this.price = price;
+        this.memory = memory;
+    }
+    public void about(){
+        System.out.println("品牌：" + this.brand);
+        System.out.println("型号：" + this.type);
+        System.out.println("操作系统：" + this.os);
+        System.out.println("价格：" + this.price);
+        System.out.println("内存：" + this.memory);;
+    }
+    public void call(int number){
+        if(number == 1){
+            System.out.println("正在给爸爸打电话");
+        } else if (number == 2) {
+            System.out.println("正在给妈妈打电话");
+        }else if(number == 3){
+            System.out.println("正在给姐姐打电话");
+        }else{
+            System.out.println("你所拨打的电话为空号");
+        }
+    }
+    public void play(){
+        System.out.println("启动游戏");
+    }
+    public void Music(String Songsname){
+        System.out.println("正在播放" + Songsname);
+    }
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        String brand = sc.next();
+        String type = sc.next();
+        String os = sc.next();
+        double price = sc.nextDouble();
+        Integer memory = sc.nextInt();
+
+        Phone p =  new Phone(brand,type,os,price,memory);
+        int nums = sc.nextInt();
+        String songname = sc.next();
+
+        p.about();
+        p.call(nums);
+        p.Music(songname);
+    }
+}

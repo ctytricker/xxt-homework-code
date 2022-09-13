@@ -1,0 +1,32 @@
+import java.util.Scanner;
+
+public class Complex {
+    int real1;
+    int image1;
+    int real2;
+    int image2;
+
+    public String add(){
+        int real = this.real1 + this.real2;
+        int image = this.image1 + this.image2;
+        if(real != 0 && image != 0){
+             return real + "+" + image + "i";
+        } else if (real != 0 && image == 0) {
+            return Integer.toString(real);
+        } else if (real == 0 && image != 0) {
+            return image + "i";
+        }
+            return "0";
+
+    }
+
+        public static void main(String[] args) {
+            Scanner sc = new Scanner(System.in);
+            Complex c = new Complex();
+            c.real1 = sc.nextInt();
+            c.image1 = sc.nextInt();
+            c.real2 = sc.nextInt();
+            c.image2 = sc.nextInt();
+            System.out.println(c.add());
+        }
+}
